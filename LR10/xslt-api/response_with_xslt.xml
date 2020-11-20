@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="transform.xslt"?>
+<objects type="array">
+  <object>
+    <id type="integer">0</id>
+    <factorial type="integer">3</factorial>
+    <multipliers type="array">
+      <multiplier type="integer">1</multiplier>
+      <multiplier type="integer">2</multiplier>
+      <multiplier type="integer">3</multiplier>
+    </multipliers>
+  </object>
+  <object>
+    <id type="integer">1</id>
+    <factorial type="integer">4</factorial>
+    <multipliers type="array">
+      <multiplier type="integer">2</multiplier>
+      <multiplier type="integer">3</multiplier>
+      <multiplier type="integer">4</multiplier>
+    </multipliers>
+  </object>
+  <object>
+    <id type="integer">2</id>
+    <factorial type="integer">5</factorial>
+    <multipliers type="array">
+      <multiplier type="integer">4</multiplier>
+      <multiplier type="integer">5</multiplier>
+      <multiplier type="integer">6</multiplier>
+    </multipliers>
+  </object>
+  <object>
+    <id type="integer">3</id>
+    <factorial type="integer">6</factorial>
+    <multipliers type="array">
+      <multiplier type="integer">8</multiplier>
+      <multiplier type="integer">9</multiplier>
+      <multiplier type="integer">10</multiplier>
+    </multipliers>
+  </object>
+</objects>

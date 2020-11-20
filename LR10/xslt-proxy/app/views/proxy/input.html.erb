@@ -1,0 +1,31 @@
+<h1>Гипотеза Симона о факториале</h1>
+<p>
+  Существует гипотеза Симона о факториале. Она гласит, что существует 4 факториала,
+  которые представимы в виде произведения трех последовательных чисел.
+  Например: 4! = 2 · 3 · 4. Написать программу, определяющую эту четверку,
+  подсчитать действительное количество таких факториалов, если это возможно и тем самым доказать неправильность
+  гипотезы. Вывести на печать результаты каждой итерации и финальных расчетов.
+</p>
+<%= form_tag url_for(controller: :proxy, action: :output), :method => "get", id: "factorials-form" do %>
+  <p>Выбор стороны рендеринга</p>
+  <div>
+    <label>
+      <input type="radio" name="side" value="server" id="server-side" checked/>
+      Рендеринг на стороне сервера
+    </label>
+  </div>
+  <div>
+    <label>
+      <input type="radio" name="side" value="client" id="client-side"/>
+      Рендеринг на стороне браузера
+    </label>
+  </div>
+  <div>
+    <label>
+      <input type="radio" name="side" value="client-with-xslt" id="client-side-xslt"/>
+      Рендеринг на стороне браузера с XSLT
+    </label>
+  </div>
+  <hr/>
+  <%= submit_tag("Посчитать факториалы", id: "get-result") %>
+<% end %>
