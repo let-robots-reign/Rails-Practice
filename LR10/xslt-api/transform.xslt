@@ -20,10 +20,18 @@
                   <xsl:value-of select="id"/>
                 </td>
                 <td>
-                  <xsl:value-of select="factorial"/>
-                </td>
-                <td>
-                  <xsl:value-of select="multipliers/multiplier"/>
+                  <xsl:variable name="fact">
+                    <xsl:value-of select="factorial"/>
+                    <xsl:text>! = </xsl:text>
+                    <xsl:for-each select="multipliers/multiplier">
+                      <xsl:if test="position() > 1">
+                        <xsl:text> * </xsl:text>
+                      </xsl:if>
+                      <xsl:value-of select="."/>
+                    </xsl:for-each>
+                  </xsl:variable>
+
+                  <xsl:value-of select="$fact"/>
                 </td>
               </tr>
             </xsl:for-each>
