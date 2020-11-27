@@ -3,7 +3,7 @@ class FactorialAlgo < ApplicationRecord
 
   def self.check_simon_theory(max_n = 20)
     result = []
-    id = 0
+    id = 1
     # n! = m * (m + 1) * (m + 2)  (m in [1; n^(1/3)])
     (0..max_n).each do |n|
       fact = get_factorial(n)
