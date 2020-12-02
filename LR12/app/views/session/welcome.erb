@@ -1,6 +1,4 @@
-<h1>Welcome</h1>
-<% if logged_in? %>
-  <h1>You are Logged In, <%= current_user.username %></h1>
-<% end %>
-<%= button_to "Login", '/login', method: :get %>
-<%= button_to "Sign Up", '/users/new', method: :get %>
+<h1>Добро пожаловать!</h1>
+<h3>Чтобы выполнить вычисления, войдите или зарегистрируйтесь</h3>
+<%= button_to "Войти", '/login', method: :get %>
+<%= button_to "Регистрация", '/users/new', method: :get %>

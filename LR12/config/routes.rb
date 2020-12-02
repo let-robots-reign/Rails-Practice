@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   root to: 'session#welcome'
 
-  get 'session/welcome'
-  get 'session/login'
-  post 'session/create'
-  get 'session/logout'
+  get 'welcome', to: 'session#welcome'
+  get 'login', to: 'session#login'
+  post 'login', to: 'session#create'
+  get 'logout', to: 'session#logout'
 
   resources :users
 

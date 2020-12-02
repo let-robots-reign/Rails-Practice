@@ -1,7 +1,10 @@
 class SessionController < ApplicationController
   skip_before_action :authorized, only: %i[welcome login create]
-  
+
   def welcome
+    if logged_in?
+      redirect_to '/input'
+    end
   end
 
   def login
@@ -18,6 +21,6 @@ class SessionController < ApplicationController
 
   def logout
     session[:user_id] = nil
-    redirect_to session_welcome_path
+    redirect_to '/welcome'
   end
 end
