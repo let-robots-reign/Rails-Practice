@@ -1,6 +1,8 @@
-<p>
+<p id='user-info'>
   Вы зашли как <%= current_user.username %>
+  <br/>
   <%= link_to 'Редактировать', edit_user_path(current_user) %>
+  <br/>
   <%= link_to 'Выйти', '/logout' %>
 </p>
 
