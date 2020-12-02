@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
-  root :to => 'count_factorials#input'
+  root to: 'session#welcome'
 
-  get 'count_factorials/input'
-  get 'count_factorials/view'
+  get 'session/welcome'
+  get 'session/login'
+  post 'session/create'
+  get 'session/logout'
+
+  resources :users
+
+  get 'input/', to: 'count_factorials#input'
+  get 'view/', to: 'count_factorials#view'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
