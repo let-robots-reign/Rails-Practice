@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+valid:
+  username: zotov
+  password_digest: $2a$12$yjjiVS5Ize.Uzu1FsZOobOgQxcyFCJYRYsMHAkHsstkG5BKz3ubie
+
+invalid:
+  username: alex
+  password_digest: 1$2a$12$yjjiVS5Ize
