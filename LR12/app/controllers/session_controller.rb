@@ -14,13 +14,15 @@ class SessionController < ApplicationController
     user = User.find_by_username(params[:username])
 
     if user&.authenticate(params[:password])
-      session[:user_id] = user.id
+      cookies.signed[:user_id] = user.id
       redirect_to '/input'
+    else
+      redirect_to '/login'
     end
   end
 
   def logout
-    session[:user_id] = nil
+    cookies.signed[:user_id] = nil
     redirect_to '/welcome'
   end
 end
