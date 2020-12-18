@@ -4,14 +4,14 @@ require 'open-uri'
 class ProxyController < ApplicationController
   before_action :parse_params, only: :output
 
-  def input
-  end
+  def input; end
 
   def output
     api_response = open(BASE_URL)
-    if @side == 'server'
+    case @side
+    when 'server'
       @result = xslt_transform(api_response).to_html
-    elsif @side == 'client-with-xslt'
+    when 'client-with-xslt'
       render xml: insert_browser_xslt(api_response).to_xml
     else
       render xml: api_response
