@@ -14,6 +14,18 @@ class CountFactorialsController < ApplicationController
     end
   end
 
+  def view_xml_content
+    respond_to do |format|
+      format.xml { render xml: FactorialAlgo.all.map(&:attributes).to_xml }
+    end
+  end
+
+  def view_xml_users
+    respond_to do |format|
+      format.xml { render xml: User.all.map(&:attributes).to_xml }
+    end
+  end
+
   private
 
   def parse_params

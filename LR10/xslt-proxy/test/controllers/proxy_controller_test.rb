@@ -12,14 +12,14 @@ class ProxyControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should return XML' do
-    get proxy_output_url, params: {side: 'client'}
+    get proxy_output_url, params: { side: 'client' }
     xml = Nokogiri::XML(response.body)
     factorial = xml.search('factorial').first.text
     assert_equal factorial, "3"
   end
 
   test 'should return HTML' do
-    get proxy_output_url, params: {side: 'server'}
+    get proxy_output_url, params: { side: 'server' }
     # 4 numbers in total
     assert_select 'table/tbody/tr', count: 4
   end
