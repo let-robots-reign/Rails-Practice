@@ -2,13 +2,10 @@ class SessionController < ApplicationController
   skip_before_action :authorized, only: %i[welcome login create]
 
   def welcome
-    if logged_in?
-      redirect_to '/input'
-    end
+    redirect_to '/input' if logged_in?
   end
 
-  def login
-  end
+  def login; end
 
   def create
     user = User.find_by_username(params[:username])
