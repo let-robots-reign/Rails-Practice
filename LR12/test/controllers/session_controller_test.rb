@@ -18,7 +18,7 @@ class SessionControllerTest < ActionDispatch::IntegrationTest
 
   test 'should fail to login with incorrect data' do
     post login_url, params: { username: users(:valid).username, password: '12' }
-    assert_response :no_content
+    assert_redirected_to login_url
   end
 
   test 'should fail to count factorials without login' do
